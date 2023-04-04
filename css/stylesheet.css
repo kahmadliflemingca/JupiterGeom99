@@ -548,7 +548,7 @@ a {
     overflow-x: auto
 }
 
-.w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before, .w3-cell-row:before,.w3-cell-row:after,.w3-clear:after,.w3-clear:before,.w3-bar:before,.w3-bar:after {
+.w3-container:after,.w3-top:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before, .w3-cell-row:before,.w3-cell-row:after,.w3-clear:after,.w3-clear:before,.w3-bar:before,.w3-bar:after {
     content: "";
     display: table;
     clear: both
@@ -1414,7 +1414,7 @@ a {
 
 .w3-blue-grey,.w3-hover-blue-grey:hover,.w3-blue-gray,.w3-hover-blue-gray:hover {
     color: #fff!important;
-    background-color: #607d8b!important
+    background-color: #00bcd4!important
 }
 
 .w3-green,.w3-hover-green:hover {
@@ -1476,10 +1476,10 @@ a {
     color: #000!important;
     background-color: #fdf5e6!important
 }
-
+/*This is the LOGO on the Nav BAR*/ 
 .w3-teal,.w3-hover-teal:hover {
     color: #fff!important;
-    background-color: #009688!important
+    background-color: #00bcd4!important
 }
 
 .w3-yellow,.w3-hover-yellow:hover {
