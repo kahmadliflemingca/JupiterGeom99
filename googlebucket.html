@@ -27,9 +27,9 @@
 <div class="w3-top">
  <div class="w3-bar w3-theme-d2 w3-left-align">
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Jupiter GIS</a>
-  <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
-  <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Solutions</a>
+  <a href="index.html" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Jupiter GIS</a>
+  <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
+  <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Solutions</a>
     <div class="w3-dropdown-hover w3-hide-small">
     <button class="w3-button" title="Notifications">Process <i class="fa fa-caret-down"></i></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
@@ -55,6 +55,64 @@
     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">Important!</button>
   </div>
 </div>
+
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-top">
+    <header class="w3-container w3-teal w3-display-container"> 
+      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+      <h4>This Website has been created for educational purposes.</h4>
+      <h5>Please keep this in mind while scrolling. <i class="fa fa-smile-o"></i></h5>
+    </header>
+    <div class="w3-container">
+      <p>The information presented here may not be appropriate for all applications.</p>
+      <p>Go to <a class="w3-text-teal" href="https://flemingcollege.ca/">Fleming College </a> to learn more.</p>
+    </div>
+    <footer class="w3-container w3-teal">
+      <p>Keep exploring!</p>
+    </footer>
+  </div>
+</div>
+
+</div>
+
+<!-- Container -->
+<div class="w3-container" style="position:relative">
+  <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
+  style="position:absolute;top:-28px;right:24px">+</a>
+</div>
+
+
+
+<script>
+// Script for side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "300px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
+
+
 
 <!-- Modal -->
 <div id="id01" class="w3-modal">
