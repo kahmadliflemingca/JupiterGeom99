@@ -75,7 +75,7 @@
 </div>
 
 <h1>Leaflet</h1>  <img src="photos/3stars.png" alt="3 stars" style="width:15%">
-<p>Writeup and intro for google my maps</p>
+<p>Leaflet is an open-source JavaScript library used for creating interactive maps on the web. The Leaflet JavaScript library contains approximately 42 KB of JavaScript and is customizable and extendable, with various plugins. One of these plugins is the Esri Leaflet plugin, a lightweight and open-source tool that enables access to ArcGIS services. </p>
 <!-- Container -->
 <div class="w3-container" style="position:relative">
   <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
@@ -89,11 +89,11 @@
         <li class="w3-theme">
           <p class="w3-xlarge">Pro</p>
         </li>
-        <li class="w3-padding-16">Free</li>
+        <li class="w3-padding-16">Open source and Free</li>
         <li class="w3-padding-16">Easy to Use</li>
-        <li class="w3-padding-16">Online</li>
-        <li class="w3-padding-16">Has Security</li>
-        
+        <li class="w3-padding-16">Highly customizable and extendable, with various plugins</li>
+        <li class="w3-padding-16"> Allows for easy display of GeoJSON on a single map</li>
+        <li class="w3-padding-16"> Offers custom-designed widgets such as layer control, Basemap gallery, and Measure tool, and etc. </li>
       </ul>
     </div>
 <!-- con Row -->
@@ -102,21 +102,37 @@
         <li class="w3-theme-l2">
           <p class="w3-xlarge">Con</p>
         </li>
-        <li class="w3-padding-16">Free</li>
-        <li class="w3-padding-16">Easy to Use</li>
-        <li class="w3-padding-16">Online</li>
-        <li class="w3-padding-16">Has Security</li>
+        <li class="w3-padding-16">Does not offer Security </li>
+        <li class="w3-padding-16">If data is sensitive requires Server to host the data</li>
+        <li class="w3-padding-16">Performance: It may not perform well when dealing with large dataset</li>
+        
       </ul>
     </div>
 
 </div>
 
 <h1>What Didn't Work</h1>
-<p>cant upload more than 10mb, cant have more than 20,000 points in all layers in the map, cant have more than 10 data layers</p>
+<p>If data is sensitive and shouldn't be publicly available, it requires a secure storage environment that requires authentication for access. While Leaflet is a great option for displaying publicly available data, it was not suitable for our client's sensitive data. After researching various solutions, we concluded that setting up a server (such as Geoserver) and hosting it on cloud services like Google Console or AWS was the best option to host the data. 
+  However, having a dedicated server for the client was not practical due to budget constraints. As a result, we needed a cost-effective alternative to securely host the sensitive data.
+  </p>
 <h1>What Did Work</h1>
-<p>creating a simple map without a lot of intricacy, just for viewing</p>
+<h3> Working with GeoJSON files</h3>
+<li class="w3-padding-16">	Convert shapefile to GeoJSON in arcgis pro using Features to Json tool</li>
+<li class="w3-padding-16">	Evaluate attributes of the shapefile, define which attributes should be included to the MapViewer</li>
+<li class="w3-padding-16">	Host Geojson files in Github.</li>
+<h3> Steps to develop the Map Viewer</h3>
+         <li class="w3-padding-16">	Include a Leaflet library from a content delivery network (CDN)</li>
+         <li class="w3-padding-16">	Add the Esri plugin to enable the use of Esri basemaps and services in your map.</li>
+         <li class="w3-padding-16">	Add the measure plugin to allow users to measure distances and areas on the map.</li>
+         <li class="w3-padding-16">	Create a map object and set its initial view, specifying the center point and zoom level.</li>
+         <li class="w3-padding-16">	Define several Esri basemaps using the L.esri.Vector.vectorBasemapLayer function and create an object called vectortiles to hold them.</li>
+         <li class="w3-padding-16">	Add the basemaps to a layer control object using the L.control.layers function, so that users can switch between them easily</li>
+         <li class="w3-padding-16">	To add GeoJSON layers to the map, use an XMLHttpRequest to fetch the GeoJSON data from Github</li>
+      
+         <li class="w3-padding-16">	Create a new Leaflet GeoJSON layer object and add it to the map, using the onEachFeature option to define a popup for each feature in the layer</li>
+
 <h1>Outcome</h1>
-<img src="photos/mymaps.png" alt="google my maps demo" style="width:100%">
+<img src="photos/LeafletSolution.gif" alt="google my maps demo" style="width:100%">
 
 </div>
 
