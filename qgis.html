@@ -75,7 +75,12 @@
 </div>
 
 <h1>QGIS</h1>  <img src="photos/3stars.png" alt="3 stars" style="width:15%">
-<p>Writeup and intro for google my maps</p>
+<p>QGIS is an open-source application that offers an abundance of GIS functions provided by core features and plugins that allow users to explore, create, 
+  edit, manage, analyze, and export geospatial data, in addition to composing, exporting, and publishing maps. The QGIS2Web plugin is one example of the many 
+  open-source options of advanced functions available within QGIS that extends the functionality of the desktop application. This specific plugin allows the user 
+  to publish a QGIS project online as a dynamic and interactive web map that is generated using Leaflet, OpenLayers, or Mapbox GL JS libraries. QGIS2Web has many 
+  available settings that can be adjusted to customize the web map interface that include selecting the layers to display, how feature attributes and attribute labels 
+  will be displayed, adding pop ups, a search bar, measuring distances tool, and other custom features to enhance user interaction.</p>
 <!-- Container -->
 <div class="w3-container" style="position:relative">
   <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
@@ -89,11 +94,11 @@
         <li class="w3-theme">
           <p class="w3-xlarge">Pros</p>
         </li>
-        <li class="w3-padding-16">Free</li>
-        <li class="w3-padding-16">Easy to Use</li>
-        <li class="w3-padding-16">Online</li>
-        <li class="w3-padding-16">Has Security</li>
-        
+        <li class="w3-padding-16">Free and Open-Source</li>
+        <li class="w3-padding-16">Easy to Learn and Use</li>
+        <li class="w3-padding-16">Adapts to Meet the Specific Needs of the User</li>
+        <li class="w3-padding-16">Connects to Many Data Sources and Plugins with Thousands of Advanced Functions</li>
+        <li class="w3-padding-16">Desktop, Server, Web Client, and Mobile Applications</li>
       </ul>
     </div>
 <!-- cons row -->
@@ -102,21 +107,52 @@
         <li class="w3-theme-l2">
           <p class="w3-xlarge">Cons</p>
         </li>
-        <li class="w3-padding-16">Free</li>
-        <li class="w3-padding-16">Easy to Use</li>
-        <li class="w3-padding-16">Online</li>
-        <li class="w3-padding-16">Has Security</li>
+        <li class="w3-padding-16">Slower Processing Times with Large Amounts of Data</li>
+        <li class="w3-padding-16">Relies on the Open-Source QGIS Community for Updates and Maintenance</li>
+        <li class="w3-padding-16">Difficult to Share and Maintain Privacy</li>
+        <li class="w3-padding-16">Mission to Update Exported Maps</li>
+        <li class="w3-padding-16">Requires Basic Knowledge of GIS Concepts</li>
       </ul>
     </div>
 
 </div>
 
 <h2>What Didn't Work</h2>
-<p>cant upload more than 10mb, cant have more than 20,000 points in all layers in the map, cant have more than 10 data layers</p>
+<p>The exported web map can only be viewed by the user that initially created the map in QGIS desktop 
+  and has access to all of the files in the exported directory. The directory contains all of the data and code required to 
+  display the web map and will need all of the files to display properly. The web map can only be viewed by or shared 
+  with others by using one of two methods.</p>
+<p>The first method is to compress the exported directory and send via email. This will allow the recipient(s) to have access 
+  to all of the required files to needed open the web map. The recipient will simply decompress the file and open the 'index.html' 
+  to display the web map on a web browser, without any additional processes or software installations required. This method is effective 
+  for sharing finished maps and maintaining privacy. However, any changes to the map can only be completed in the QGIS desktop application 
+  and will require repeating the export to web map process, as well as resending the latest directory, to display the updated web map in a browser.</p>
+<p>The second method is to upload the exported directory to a web server. This will require setting up an account with a public cloud storage service, 
+  creating a bucket, and uploading the contents of the exported directory to the bucket. Once the data is uploaded, the 'Object URL' located in the 
+  'index.html' file will provide access to the web map. This method is effective for sharing public maps only and requires knowledge on web server 
+  maintenance and bucket creation.</p>
 <h2>What Did Work</h2>
-<p>creating a simple map without a lot of intricacy, just for viewing</p>
+<p>The process of downloading and learning QGIS software was no difficult task. With the assistance of easily accessible and readily available online guides, 
+  tutorials, and other training materials provided by the open-source QGIS community, I was able to effectively transition to a new GIS work environment 
+  and develop a customized web map. The user-friendly interface of the QGIS desktop application facilitates ease of use in features and plugins. Within QGIS 
+  desktop, I was able to import and process data, symbolize and edit layers, and add a basemap. Once the project was complete and ready for export, the plugin 
+  install was a simple process: Main Menu > Plugins > Manage and Install Plugins, enter 'qgis2web' in the search bar, click 'qgis2web' option, and 
+  click 'install'. Once the install was complete, the steps to export the project to a web map began:</p>
+  <h3>Step 1: QGIS2Web plugin</h3>
+  <p>Locate the 'qgis2web' plugin under the 'Web' tab in the main menu and select 'Create web map'.</p>
+  <p><img src="photos/step1.jpg" alt="qgis2web plugin" style="width:35%"></p>
+  <h3>Step 2: Customize Attribute Labels and Popups</h3>
+  <p>In the new window, under the 'Layers and Groups' tab, layer labels and popups can be customized.</p>
+  <p><img src="photos/step2b.jpg" alt="layer settings" style="width:20%"><img src="photos/step2bi.jpg" alt="label popup" style="width:10%"></p>
+  <h3>Step 3: Add Widgets</h3>
+  <p>Under the 'Appearance' tab, additional widgets can be customized and added to the display.</p>
+  <p><img src="photos/step2c.jpg" alt="appearance settings" style="width:20%"></p>
+  <h3>Step 4: Export</h3>
+  <p>Under the 'Export' tab, select the location the directory will be stored. Once the export is complete, the 'index' file will open the web map in the web browser.</p>
+  <p><img src="photos/step3.jpg" alt="export" style="width:30%"><img src="photos/step4.jpg" alt="folder" style="width:25%"><img src="photos/step5.jpg" alt="files" style="width:6%"></p>
 <h2>Outcome</h2>
-<img src="photos/mymaps.png" alt="google my maps demo" style="width:50%">
+<p>Customized web map created from open-source software.</p>
+<img src="photos/qgiswebmap.jpg" alt="QGIS2Web Map Demo" style="width:50%">
 
 </div>
 
