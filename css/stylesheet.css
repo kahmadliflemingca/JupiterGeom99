@@ -178,10 +178,12 @@ textarea {
 }
 
 /* End extract */
+/* I added the 1% margin here so the text wouldnt go all the way to the sides. */
 html,body {
     font-family: Verdana,sans-serif;
     font-size: 15px;
-    line-height: 1.5
+    line-height: 1.5;
+    margin: 1%
 }
 
 html {
