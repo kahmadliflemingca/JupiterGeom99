@@ -96,9 +96,9 @@
         </li>
         <li class="w3-padding-16">Free and Open-Source</li>
         <li class="w3-padding-16">Easy to Learn and Use</li>
-        <li class="w3-padding-16">User Customized</li>
-        <li class="w3-padding-16">Advanced Functions Available with Plugins</li>
-        <li class="w3-padding-16"></li>
+        <li class="w3-padding-16">Adapts to Meet the Specific Needs of the User</li>
+        <li class="w3-padding-16">Connects to Many Data Sources and Plugins with Thousands of Advanced Functions</li>
+        <li class="w3-padding-16">Desktop, Server, Web Client, and Mobile Applications</li>
       </ul>
     </div>
 <!-- cons row -->
@@ -107,27 +107,30 @@
         <li class="w3-theme-l2">
           <p class="w3-xlarge">Cons</p>
         </li>
-        <li class="w3-padding-16">Free</li>
-        <li class="w3-padding-16">Easy to Use</li>
-        <li class="w3-padding-16">Online</li>
-        <li class="w3-padding-16">Has Security</li>
-        <li class="w3-padding-16">Has Security</li>
+        <li class="w3-padding-16">Moderately Slow Processing of Large Amounts of Data</li>
+        <li class="w3-padding-16">Relies on the Open-Source QGIS Community for Updates and Maintenance</li>
+        <li class="w3-padding-16">Unable to Share Exported Maps without Uploading to a Web Server</li>
+        <li class="w3-padding-16">Mission to Update and Re-Share Exported Maps</li>
+        <li class="w3-padding-16">Requires Basic Knowledge of GIS Concepts</li>
       </ul>
     </div>
 
 </div>
 
 <h2>What Didn't Work</h2>
-<p>The exported web map can only be viewed by the person that initially created the map in QGIS desktop 
-  and has access to all of the files in the directory. The directory contains all of the data and code required to 
+<p>The exported web map can only be viewed by the user that initially created the map in QGIS desktop 
+  and has access to all of the files in the exported directory. The directory contains all of the data and code required to 
   display the web map and will need all of the files to display properly. The web map can only be viewed by or shared 
   with others by using one of two methods.</p>
 <p>The first method is to compress the exported directory and send via email. This will allow the recipient(s) to have access 
   to all of the required files to needed open the web map. The recipient will simply decompress the file and open the 'index.html' 
   to display the web map on a web browser, without any additional processes or software installations required. This method is effective 
-  for sharing finished maps and maintaining privacy. However, any changes to the map can only be completed in QGIS desktop and will require 
-  repeating the export to web map process, as well as resending the latest directory, to display the web map in a browser.</p>
-<p>The second method is to upload to a web server</p>
+  for sharing finished maps and maintaining privacy. However, any changes to the map can only be completed in the QGIS desktop application 
+  and will require repeating the export to web map process, as well as resending the latest directory, to display the updated web map in a browser.</p>
+<p>The second method is to upload the exported directory to a web server. This will require setting up an account with a public cloud storage service, 
+  creating a bucket, and uploading the contents of the exported directory to the bucket. Once the data is uploaded, the 'Object URL' located in the 
+  'index.html' file will provide access to the web map. This method is effective for sharing public maps only and requires knowledge on web server 
+  maintenance and bucket creation.</p>
 <h2>What Did Work</h2>
 <p>creating a simple map without a lot of intricacy, just for viewing</p>
 <h2>Outcome</h2>
