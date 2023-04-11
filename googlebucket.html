@@ -51,7 +51,7 @@
 
 <!-- Image Header -->
 <div class="w3-display-container w3-animate-opacity">
-  <img src="photos/stream.avif" alt="river in gorge" style="width:100%;min-height:350px;max-height:600px;">
+  <img src="photos/stream.avif" alt="river in gorge" style="width:100%;min-height:350px;max-height:300px;">
   <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">Important!</button>
   </div>
@@ -76,7 +76,8 @@
 </div>
 
 <h1>Google Cloud Storage: As a method to secure data in ArcGIS Online</h1>  <img src="photos/1star.png" alt="1 star" style="width:15%">
-<p>Writeup and intro for google my maps</p>
+<p>Google Cloud Storage is a cloud based storage service that runs on Google Cloud's infrastructure. There are a number of storage products to meet a variety of needs from archiving, block storage and object storage. These storage products can be used for streaming videos, disks for virtual machines, backups, transferring archival data on a collaborative platform. Google storage has a range of pricing for these various options and can be scaled up or down for businesses or personal use. Storage solutions can be made public or require authentication through google services via assigning collaborators through the platform. It is this combination of storage and authentication that we will leverage for this project.</p>
+  <p><u>The intent of this  investigation into Google cloud storage was to use it as a mechanism to secure data to be displayed in ArcGIS Online, rather than using ArcGIS Online privacy settings and the associated costs. </u> </p>
 <!-- Container -->
 <div class="w3-container" style="position:relative">
   <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
@@ -94,6 +95,7 @@
         <li class="w3-padding-16">Can hold many data types</li>
         <li class="w3-padding-16">Collaborative</li>
         <li class="w3-padding-16">Secure Storage</li>
+        <li class="w3-padding-16">Scalable from private to business</li>
         
       </ul>
     </div>
@@ -105,21 +107,32 @@
         </li>
         <li class="w3-padding-16">Not Free</li>
         <li class="w3-padding-16">Complex</li>
-        <li class="w3-padding-16">Overwhelimg amount of technical options</li>
+        <li class="w3-padding-16">Overwhelming amount of technical options</li>
         <li class="w3-padding-16">CORS can cause issues</li>
+        <li class="w3-padding-16">Does not create OAuth tokens required for authentication through AGOL</li>
       </ul>
     </div>
 
 </div>
 
 <h2>What Didn't Work</h2>
-<p>cant upload more than 10mb, cant have more than 20,000 points in all layers in the map, cant have more than 10 data layers</p>
+<p>ArcGIS Online requires an OAuth token for authentication for private data while Google Storage uses authentication through Google framework, requesting the gmail username and password of an authorized user. This was the issue that proved this method of hosting secure data through a public layer on AGOL was a dead end.</p>
 <h2>What Did Work</h2>
-<p>creating a simple map without a lot of intricacy, just for viewing</p>
+<p>I was able to create a bucket to hold a Geojson file in Google Storage. I was also able to successfully share that as public data to AGOL as a url. I was also able to secure that data and assign users (using gmail accounts) and access that data via url after prompting a sign in to authorize access. To allow AGOL to access the data from my bucket, I had to allow CORS(Cross Origin Resource Sharing) for fleming ArcGIS online for my bucket. I did that using Google Cloud SDK Shell command line interface (CLI) and a CORS file that allowed that specific site.</p>
+<img src="photos/cors.png" alt="cors" style="width:30%">
+<p>Fig. 1 CORS file to allow fleming ArcGIS to access Google bucket</p>
+<p>I then had to use Google Cloud SDK Shell CLI to assign this CORS file to my bucket, using the following gsutil cors.</p>
+<li>Open a Google Cloud SDK Shell CLI and authenticate with your Google Cloud account by running the following command: gcloud auth login</li>
+<li>Set your current project by running the following command: gcloud config set project "project_id" </li>
+<li>Replace "project_id" with the ID of the Google Cloud project that contains the bucket you want to configure.</li>
+<li>Set the CORS configuration for the bucket by running the following command: gsutil cors set "cors_config_file.json" gs://"bucket_name"</li>
+<li>Replace "cors_config_file.json" with the path to a JSON file that contains your CORS configuration, and "bucket_name" with the name of the bucket you want to configure.</li>
+<p>To add users to my private bucket, simply select "Permissions > Grant Access" and you will be offered many roles to assign to any gmail account</p>
+<img src="photos/bucket_access.png" alt="Access" style="width:30%">
 <h2>Outcome</h2>
-<img src="photos/mymaps.png" alt="google my maps demo" style="width:50%">
+<p>The final outcome of this investigation was that although I could access the publicly available data in my bucket and post it using a url to AGOL, the AGOL OAuth requirement for secured data meant that I was unable to access secured data in my bucket, through AGOL.</p>
 
-</div>
+<img src="photos/bucketfail.png" alt="bucket" style="width:30%">
 
 <!-- Container -->
 <div class="w3-container" style="position:relative">
